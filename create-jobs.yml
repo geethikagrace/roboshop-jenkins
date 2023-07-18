@@ -1,5 +1,5 @@
 - name: create jenkins jobs
-  hosts: local host
+  hosts: localhost
   connection: local
   tasks:
 #    - name: copy xml file
