@@ -7,6 +7,8 @@
       - { git_url: https://github.com/geethikagrace/roboshop-terraform, job_name =roboshop-terraform }
 
   tasks:
+    - name: create job block
+      block:
     - name: copy xml file
       ansible.builtin.copy:
         src: sjobs.xml
