@@ -4,7 +4,7 @@
   tasks:
 #    - name: copy xml file
 #      ansible.builtin.copy:
-#        src: test.yml
+#        src: test.xml
 #        dest: /tmp/test.xml
 
     - name: Create a jenkins job
