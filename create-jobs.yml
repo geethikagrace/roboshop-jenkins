@@ -1,16 +1,21 @@
 - name: create jenkins jobs
   hosts: localhost
   connection: local
+  vars:
+    sjobs:
+      - { git_url: https://github.com/geethikagrace/roboshop-terraform, job_name =roboshop-terraform}
+      - { git_url: https://github.com/geethikagrace/roboshop-terraform, job_name =roboshop-terraform }
+
   tasks:
-#    - name: copy xml file
-#      ansible.builtin.copy:
-#        src: test.xml
-#        dest: /tmp/test.xml
+    - name: copy xml file
+      ansible.builtin.copy:
+        src: sjobs.xml
+        dest: /tmp/sjobs.xml
 
     - name: Create a jenkins job
       community.general.jenkins_job:
-       config: "{{ lookup('file', 'test.xml') }}"
-       name: test from ansible
+       config: "{{ lookup('file', 'sjobs.xml') }}"
+       name: "{{ item.job_name }}"
        password: admin123
-       url: http://52.207.218.232:8080
+       url: http://172.31.93.168:8080
        user: admin
