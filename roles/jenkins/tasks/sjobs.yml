@@ -1,6 +1,6 @@
 
 - name: copy xml file
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: sjobs.xml
     dest: /tmp/test.xml
 
