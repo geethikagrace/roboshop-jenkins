@@ -1,4 +1,9 @@
-
+- name : check if jenkins job exists
+  community.general.jenkins_job_info:
+     name: "{{item.job_name}"
+     user: admin
+     password: admin123
+  register: jenkins_job_info
 - name: copy xml file
   ansible.builtin.template:
     src: sjobs.xml
