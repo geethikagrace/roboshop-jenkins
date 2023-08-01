@@ -10,7 +10,7 @@
 
 - name: copy xml file
   ansible.builtin.template:
-    src: sjobs.xml
+    src: sjob.xml
     dest: /tmp/test.xml
   when: jenkins_job_info_status.failed or override
 
