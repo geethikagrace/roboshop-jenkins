@@ -4,7 +4,7 @@ def call() {
 
         agent{
             node{
-                label
+                label 'workstation'
             }
         }
         options {
