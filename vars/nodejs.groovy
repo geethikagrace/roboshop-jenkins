@@ -1,9 +1,9 @@
 def call() {
-    pipeline{
+    pipeline {
 
 
-        agent{
-            node{
+        agent {
+            node {
                 label 'workstation'
             }
         }
@@ -12,35 +12,34 @@ def call() {
         }
 
 
-
-
-        stages{
-            stage (code quality){
-                steps{
+        stages {
+            stage(code quality) {
+                steps {
                     sh 'sonar-scanner -Dsonar.projectkey=${component} -Dsonar.host.url = http://172.31.82.179:9000 -Dsonar.login=admin -Dsonar.password=admin123'
                 }
             }
-            stage (Unit Test Cases){
-                steps{
+            stage(Unit Test Cases) {
+                steps {
                     sh 'Unit Test Cases'
                 }
             }
-            stage (Chechmarx SAST scan){
-                steps{
+            stage(Chechmarx SAST scan) {
+                steps {
                     sh 'Chechmarx SAST scan'
                 }
             }
-            stage (Chechmarx SCA scan){
-                steps{
+            stage(Chechmarx SCA scan) {
+                steps {
                     sh 'Chechmarx SCA scan'
                 }
             }
 
         }
-//        post{
-//            always {
-//                cleanWs()
-//            }
-//        }
+
+        post {
+            always {
+                cleanWs()
+            }
+        }
     }
 }
