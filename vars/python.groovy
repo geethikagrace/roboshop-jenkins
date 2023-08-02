@@ -12,8 +12,6 @@ def call() {
         }
 
 
-
-
         stages{
             stage ('code quality'){
                 steps{

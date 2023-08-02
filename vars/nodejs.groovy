@@ -13,11 +13,6 @@ def call() {
         }
 
 
-        environment {
-            NEXUS = credentials('NEXUS')
-        }
-
-
         stages {
 
             stage('code quality') {
@@ -40,7 +35,6 @@ def call() {
                     sh 'echo  Chechmarx SCA scan'
                 }
             }
-
         }
         post{
             always {

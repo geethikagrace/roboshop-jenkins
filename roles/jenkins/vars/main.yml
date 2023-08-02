@@ -4,7 +4,7 @@ sjobs:
     - { repo_url: https://github.com/geethikagrace/aws-ssm-parameter-store.git, job_name : aws-ssm-parameter-store}
 
 mjobs:
-    - { repo_url: https://github.com/geethikagrace/cart.git, job_name: cart }
+#    - { repo_url: https://github.com/geethikagrace/cart.git, job_name: cart }
     - { repo_url: https://github.com/geethikagrace/catalogue.git, job_name: catalogue }
     - { repo_url: https://github.com/geethikagrace/shipping.git, job_name: shipping }
     - { repo_url: https://github.com/geethikagrace/payment.git, job_name: payment }
