@@ -11,12 +11,16 @@ def call() {
             ansiColor('xterm')
         }
 
+        environment {
+            NEXUS = credentials('NEXUS')
+        }
+
 
         stages {
 
             stage('code quality') {
                 steps {
-                    sh 'echo sonar-scanner -Dsonar.projectkey=${component} -Dsonar.host.url = http://172.31.82.179:9000 -Dsonar.login=admin -Dsonar.password=admin123'
+                    sh ' sonar-scanner -Dsonar.projectkey=${component} -Dsonar.host.url = http://172.31.82.179:9000 -Dsonar.login=admin -Dsonar.password=admin123'
                 }
             }
             stage('Unit Test Cases') {
